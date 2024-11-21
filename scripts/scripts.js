@@ -65,5 +65,13 @@ You are encouraged to use the provided naming convention for ease of review.
 
 // INSERT YOUR CODE HERE
 
+const durationBtn = document.getElementById("duration-button")
 
+function clickHandler() {
+    const newDuration = prompt ("Enter Duration: ")
+    const result = document.getElementById("duration-text")
+    result.innerHTML = newDuration
+}
+
+durationBtn.addEventListener('click', clickHandler)
 
