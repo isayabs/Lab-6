@@ -11,8 +11,9 @@ You are encouraged to use the provided naming convention for ease of review.
 
 // INSERT YOUR CODE HERE
 
+let modelName = "Model XYZ"
 
-
+let duration = 0 
 
 
 /****************** helper function ******************/
@@ -46,9 +47,39 @@ You are encouraged to use the provided naming convention for ease of review.
 
 // INSERT YOUR CODE HERE
 
+const modelbtn = document.getElementById("model-button")
 
 
 
+function changeModel() {
+    const modeltxt = document.getElementById("model-text")
+
+    if (modelName === "Model XYZ"){
+        modelName = "Model CPRG"
+        modeltxt.innerHTML = "Model CPRG"
+        
+    } else if (modelName === "Model CPRG") {
+        modelName = "Model XYZ"
+        modeltxt.innerHTML = "Model XYZ"
+    }
+
+   
+}
+
+// addEventListener("event", callbackFunction)
+
+// function clickHandler1() {
+   
+//     modeltxt.innerHTML = "Updated Text"
+
+//     if (modeltxt.innerHTML === "Model XYZ"){
+//         modeltxt.innerHTML = "Model CPRG"
+//     } else {
+//         modeltxt.innerHTML = "Model XYZ"
+//     }
+// }
+
+modelbtn.addEventListener("click", changeModel)
 
 
 
