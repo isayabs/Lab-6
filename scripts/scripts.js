@@ -28,9 +28,19 @@ let duration = 0
 
 // INSERT YOUR CODE HERE
 
+function recalculate() {
+    let costLabel = document.getElementById("calculated-cost")
+    
+    let totalCost
+    if (modelName === "Model XYZ") {
+        totalCost = duration * 100 
 
+    } else if (modelName === "Model CPRG") {
+        totalCost = duration * 213 
+    }
 
-
+    costLabel.innerHTML = totalCost
+}
 
 
 /****************** model button logic ******************/
@@ -49,35 +59,20 @@ let duration = 0
 
 const modelbtn = document.getElementById("model-button")
 
-
-
 function changeModel() {
     const modeltxt = document.getElementById("model-text")
 
     if (modelName === "Model XYZ"){
         modelName = "Model CPRG"
         modeltxt.innerHTML = "Model CPRG"
-        
+
     } else if (modelName === "Model CPRG") {
         modelName = "Model XYZ"
         modeltxt.innerHTML = "Model XYZ"
     }
 
-   
+    recalculate()
 }
-
-// addEventListener("event", callbackFunction)
-
-// function clickHandler1() {
-   
-//     modeltxt.innerHTML = "Updated Text"
-
-//     if (modeltxt.innerHTML === "Model XYZ"){
-//         modeltxt.innerHTML = "Model CPRG"
-//     } else {
-//         modeltxt.innerHTML = "Model XYZ"
-//     }
-// }
 
 modelbtn.addEventListener("click", changeModel)
 
@@ -98,11 +93,14 @@ modelbtn.addEventListener("click", changeModel)
 
 const durationBtn = document.getElementById("duration-button")
 
-function clickHandler() {
+function changeDuration() {
     const newDuration = prompt ("Enter Duration: ")
+    duration = parseInt(newDuration)
     const result = document.getElementById("duration-text")
-    result.innerHTML = newDuration
+    result.innerHTML = duration
+    
+    recalculate()
 }
 
-durationBtn.addEventListener('click', clickHandler)
+durationBtn.addEventListener('click', changeDuration)
 
